@@ -21,7 +21,9 @@ function App() {
   }
 
 useEffect(()=>{
-setDataArr([...JSON.parse(localStorage.getItem("data"))]);
+  if(localStorage.getItem("data")!=null){
+    setDataArr([...JSON.parse(localStorage.getItem("data"))]);
+  }
 }, [])
   
 let [dataArr, setDataArr]=useState([]);
